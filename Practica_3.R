@@ -1,10 +1,10 @@
 rm(list=ls())
 getwd()
-setwd("C:/Users/Fernando Cabrera/Desktop/Cami_Labo/Practicas/")
- 
+#setwd("C:/Users/Fernando Cabrera/Desktop/Cami_Labo/Practicas/")
+setwd("/home/clinux01/Escritorio/CamiLabo/Practicas/") 
 #Practica 3
 #Ejercicio 1
-
+#a
 x<-1:1000
 vector<-c()
 
@@ -12,13 +12,14 @@ for(numero in x){
   vector<-c(vector,numero)
 }
 print(vector)
-#Array todavia no se hace
-p_array<-array(x,dim(30,20,2))
+#b
+p_array<-array(data=c(1:600),dim=c(30,20))
+p_array
 #c- generar una matriz del punto anteriror pero como producto de dos matrices
-matrizA<-matrix(1:600,30,20) #puse 600 porque 1000 no entran en la matriz 
-matrizB<-matrix(1:400,20,20)
+matrizA<-matrix(1:25,5,5)  
+matrizB<-matrix(1:20,4,5)
 
-matrizC<-matrizA*matrizB  #COMO MULTIPLICO MATICIALMENTE
+matrizC<-matrizA%%matrizB #COMO MULTIPLICO MATICIALMENTE
 
 
 
@@ -53,4 +54,36 @@ mi_matriz[b]    #no lo entiendo
 
 
 #Ejercicio 3
+#a
+rm(lis=ls())
+A<-matrix(1:4,2,2)
+A
+B<-matrix(5:8,2,2)
+B
+c<-A%*%B
+c
+#b
+rm(list=ls())
+´a<-c()
+while(length(a)<9){
+  if(length(a)>=9){
+    break
+  } else{
+    dat<-as.numeric(readline("Ingrese un numero"))
+    a<-c(a,dat)
+  }
+}
+matriz<-matrix(data=a,3,3)
+matriz
+
+
+
+
+
+
+
+
+
+
+
 
