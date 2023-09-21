@@ -1,7 +1,7 @@
 rm(list=ls())
 getwd()
-#setwd("C:/Users/Fernando Cabrera/Desktop/Cami_Labo/Practicas/")
-setwd("/home/clinux01/Escritorio/CamiLabo/Practicas/") 
+setwd("C:/Users/Fernando Cabrera/Desktop/Cami_Labo/Practicas/")
+#setwd("/home/clinux01/Escritorio/CamiLabo/Practicas/") 
 #Practica 3
 #Ejercicio 1
 #a
@@ -64,7 +64,7 @@ c<-A%*%B
 c
 #b
 rm(list=ls())
-´a<-c()
+a<-c()
 while(length(a)<9){
   if(length(a)>=9){
     break
@@ -77,10 +77,49 @@ matriz<-matrix(data=a,3,3)
 matriz
 
 
+#3b
+
+matriza<-matrix(sample(1:4),2,2)
+matrizb<-matrix(sample(4:7),2,2)
+a<-is.matrix(matriza)
+b<-is.matrix(matrizb)
+if((a==TRUE)& (b==TRUE)){
+ matrizc<-matriza*matrizb 
+}else{
+  print("Error")
+}
+print(matrizc)
 
 
+#c-Aplicar los programas anteriores al producto entre matrices de mas de 100 filas/columnas y
+#comparar los tiempos involucrados. Comparar la eficicienca de las funciones de R con la de los
+#programas realizados.
 
+rm(lis=ls())
+A<-matrix(1:1000,100,100)
+A
+B<-matrix(1:1000,100,100)
+B
+c<-A%*%B
+c
+#d Agregar a los programas mencionados en los puntos a) y b) un chequeo que determine antes de realizar los calculos si las dimensiones de los arrays son compatibles para los c´alculos que
+#se quieren llevar a cabo y que en caso de que las dimensiones no sean compatibles, muestre un mensaje por pantalla y que termine el programa.
+matriza<-matrix(sample(1:4),2,2)
+matrizb<-matrix(sample(4:7),2,2)
+a<-is.matrix(matriza)
+b<-is.matrix(matrizb)
+dimena<-dim(matriza)
+dimenb<-dim(matrizb)
+diment<-dimenb==dimena
+ 
 
+if(diment=="TRUE"){
+  matrizc<-matriza%%matrizb
+}else{
+  print("Error las dimensiones nol son compatibles")
+}
+
+#e 
 
 
 
