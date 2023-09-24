@@ -35,11 +35,11 @@ promedio_temp<-round(mean(temp))
 
 
 if(temp_analisis<promedio_temp){
-    print(paste("El dia",dias,"del mes de Agosto la temperatura fue de",temp_analisis,"°C es decir debajo de la media mensual"))
+    cat("El dia",dias,"del mes de Agosto la temperatura fue de",temp_analisis,"°C es decir debajo de la media mensual","\n")
  }else if(temp_analisis>promedio_temp){
-    print(paste("El dia",dias,"del mes de Agosto la temperatura fue de",temp_analisis,"ºC es decir por encima  de la  media mensual"))
+    cat("El dia",dias,"del mes de Agosto la temperatura fue de",temp_analisis,"ºC es decir por encima  de la  media mensual","\n")
   }else if(temp_analisis==promedio_temp){
-    print(paste("El dia",dias,"del mes de Agosto la temperatura fue de",temp_analisis,"ºC es decir igual a la media mensual"))
+   cat("El dia",dias,"del mes de Agosto la temperatura fue de",temp_analisis,"ºC es decir igual a la media mensual","\n")
  }    
 
 
