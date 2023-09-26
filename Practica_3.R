@@ -83,7 +83,7 @@ matriza<-matrix(sample(1:4),2,2)
 matrizb<-matrix(sample(4:7),2,2)
 a<-is.matrix(matriza)
 b<-is.matrix(matrizb)
-if((a==TRUE)& (b==TRUE)){
+if((a)& (b)){
  matrizc<-matriza*matrizb 
 }else{
   print("Error")
@@ -121,7 +121,25 @@ if(diment=="TRUE"){
 
 #e 
 
+#Ejercicio 5
+getwd()
+setwd("/home/clinux01/Escritorio/CamiLabo/Practicas/")
+rm(list=ls())
+temperatura<-c()
+horas<-seq(0,21,by=3)
+for(hr in horas){
+  t<-as.numeric(readline("Ingrese un valor de temperatura en ºC"))
+  while(is.na(t)){
+    t<-as.numeric(readline("Ingrese la temperatura nuevamente en ºC"))  
+  }
+  temperatura<-c(temperatura,t)
+}
 
+pos.max<-which.max(temperatura)
+temp_max<-temperatura[which.max(temperatura)]
+temp_max
+hora.max<-horas[which.max(temperatura)]
+print(paste("La temperatura maxima fue de",temp_max,"ºC a la/s",hora.max,"hs"))
 
 
 
