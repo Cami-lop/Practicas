@@ -24,7 +24,7 @@ repeat{
     temperatura<-as.numeric(readline("Ingrese temperatura en °C"))
     temp[dia]<-temperatura 
     if(dias==dia){
-      temp_analisis<-temperatura
+      temp_analisis<-temperatura 
   }
 }    
 
