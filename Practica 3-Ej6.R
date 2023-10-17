@@ -1,31 +1,33 @@
 #################### Practica 3 ###################
 #Ejercicio 6
 getwd()
-setwd("/home/clinux01/Escritorio/CamiLabo/Practicas/Datos Practica 3-20231003/")
+setwd("/home/clinux01/Escritorio/CamiLabo/Practicas/Datos Practica 3-20231011/")
 #a-
 #Apply
-load("/home/clinux01/Escritorio/CamiLabo/Practicas/Datos Practica 3-20231003/temp_bsas.RData")
-class(datos_dimensiones) #preguntar pq l hago en  variable y no en datos dimensiones
-punto_de_reticula<-8*14
-prom_men<- matrix(data= datos_dimensiones, ncol = 4, nrow = 112) #manera 2
-dim(prom_men)
-prom_men
+load("temp_bsas.RData")
 
+class(datos_dimensiones) #preguntar pq l hago en  variable y no en datos dimensiones
 #Ciclos
 nlong<-8
 nlat<-14
 nnivel<-4
 ntiempo<-72
-lat<-0
+meses<-12
+anios<-6
+pto_reticula<-0
 m<-0
 tiempo<-0
-for( tiempo in variable){
-  for(n in nnivel){
-    for(lat in nlat){
-     lat<-lat*nlong 
+datos<-array(data=variable, dim =c(8,14,4,12,6) )
+promedio_m<-apply(datos,c(1,2,3,4),mean)
+promedio<-array(NA,c(8,14,4,12)) #cuand hago el apply pongo dim que estan fijas y cuando armol el array las dim que tienen que tener
+for(lon in nlong){
+  for(l in nlat){
+    for(n in nnivel){
+     for(t in 1:12){
+       promedio[lon,l,n,t]<-mean(datos[lon,l,n,t,])
+     }
     }
   }
-  m<-matrix(variable,ncol=lat, nrow = n)
 }
 dim(m)
 #b)Obtener la temperatura media anual en el perıodo analizado para cada nivel y cada punto de retıcula.
