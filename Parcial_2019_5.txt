@@ -1,0 +1,19 @@
+#Ejercicio 5- Explicacion linea por linea del codigo 
+-Carga los datos con load 
+-muestra de manera corta los primeros elementos de datos  
+-temp es una lista que contiene 4 variables
+ -temperatura<-array con dim 60 70 173 144 
+   - tiempos<- son fechas con un largo de 60 datos/num
+   -levels<- alturas, tiene una longitud de 10 datos/num
+   - lats<- 73 datos de latitud cada 2.5
+   -long<-144 datos de longitud cada 2.5
+
+-data<- es un array que contiene los datos del primer elemento de datos, osea los del array temp, las dimensiones son 60,(10*73*144 )
+
+-Y<-un vector de longitud 60 que se forma mediante el promedio de todas las filas del array 
+
+-data_dom<- se esta quedando con los datos de temperatura que cumplan que  la variable niveles que sean igual a 850 para todos los tiempos , latitudes y longitudes 
+
+-Y_dom<- es un escalar que se forma al hacer la media de data_dom, longitud 1 
+
+X<-es un array que se forma mediante la resta entre Y_dom ( la media de data_dom) y un array que contiene como informacion  Y (promedio delas filas del array data) repetido las lat por las longitud(144*73)y sus dimensiones son 60, 73,144 
