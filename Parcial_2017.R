@@ -1,6 +1,6 @@
 #Parcial 2017
 getwd()
-setwd("C:/Users/DELL/Desktop/Cami/Practicas/")
+setwd("C:/Users/camil/OneDrive/Escritorio/Cami_Labo/Practicas/")
 #Ejercicio 1 
 meteo<-function(Temp,Td) {
   if(Td>=Temp){
@@ -136,3 +136,53 @@ e<-c(T,F,T,F,T,F,F,F,F)
 A[e]
 C<-cbind(A[,1],b,A[,3])
 #me falto el ultimo
+
+#Ejercicio 12
+nombres<-c("Paula","Alejandra","Cande","Sergio","Daniel")
+edad<-c(40,50,22,51,69)
+vec<-c(TRUE,TRUE,TRUE,FALSE,FALSE)
+
+
+for(i in 1:length(nombres)){
+  if(edad[i]>=65){
+    if(vec[i]==TRUE){
+      print(paste(nombres[i], "esta jubilada", sep=" "))
+    }else {
+      print(paste(nombres[i], "esta jubilado", sep=" "))
+    }
+}else{
+   if(vec[i]==TRUE){
+     print(paste(nombres[i], "no esta jubilada", sep=" "))
+   }else{
+     print(paste(nombres[i], "no esta jubilado", sep=" "))
+      }
+ }
+}  
+#Ejercicio 13
+A<-matrix(c(0,-1,5,6,9,-5,10.5,3,1),nrow=3)
+mA<-min(min(A)) #minimo del minimo de A?
+tmp<-which(A==mA) #las posciones/la posiciones¿ en las que se cumple que A es igual al minimo de A
+a<-arrayInd(tmp,c(3,3)) #una matriz de 3 filas y 3 columnas con los datos del la locacion en la matriz del minimo de A(fila 3 columna 2 )
+
+#Ejercicio 14
+D<-c("BsAs Salta Jujuy Neuquen Chaco") 
+E<-c("2","1","15","7") 
+paste(substr(D,6,9),E[1]) #Salt 2 me lo da separado
+D==E[3] #FALSE
+as.numeric(E[2])/as.numeric(E[1]) #1/2
+sub("Chaco", E[3],D) #de D me da todo menos Chaco y E en la posicion 3
+
+#Ejercio 15
+M<-matrix(c(-1,2,0,3,-2,1),ncol=2)
+N<-matrix(c(1,0,0,1,1,1),ncol=2) 
+b<-1
+
+A<-M<b #T,F,T,F,T,F EN MATRIZ 
+B<-M[!A] #2 3 1
+C<-is.logical(A) #TRUE
+D<-is.logical(B) #FALSE 
+E<-xor(A,N) 
+#Esto comparará cada elemento de la matriz lógica A con el elemento correspondiente de la matriz N. 
+#Si ambos son VERDADERO,  el resultado será FALSO, de lo contrario, será VERDADERO
+#TRUE ES 1 
+#FALSE ES 0
